@@ -1,0 +1,7 @@
+.title {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    color: var(--title-color);
+    font-size: 20px;
+    font-weight: 700;
+}
