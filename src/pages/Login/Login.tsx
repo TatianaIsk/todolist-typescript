@@ -1,42 +1,44 @@
-import React, {useState} from 'react';
-import Title from './../../../src/components/Title/Title';
-import './Login.css';
-import Input from "../../components/Input/Input";
-import {Link} from "react-router-dom";
+import React, { useRef, useState } from "react";
+import Title from "./../../../src/components/Title/Title";
+import "./Login.css";
+import { Link } from "react-router-dom";
 
-const Login: React.FC = () => {
-    const [login, setLogin] = useState('');
-    const [password, setPassword] = useState('');
-    const onChangeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setLogin(e.target.value);
-    }
+const Login = () => {
+  const loginRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
 
-    const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.target.value);
-    }
+  const onHandleClick = () => {
+    console.log({
+      email: loginRef.current?.value,
+      password: passwordRef.current?.value,
+    });
+  };
 
-    return (
-        <div className='container'>
-            <Title text="Login"/>
-            <div className='inputLogin'>
-                <Input
-                    type='text'
-                    placeholder='Username'
-                    value={login}
-                    onChange={onChangeLogin}
-                />
-                <Input
-                    type='password'
-                    placeholder='Password'
-                    value={password}
-                    onChange={onChangePassword}
-                />
-            </div>
-            <Link to='/register'>
-                Sing in
-            </Link>
-        </div>
-    );
+  return (
+    <div className="container">
+      <Title text="Login" />
+      <div className="inputLogin">
+        <input
+          className="input"
+          type="text"
+          placeholder="Username"
+          ref={loginRef}
+        />
+        <input
+          className="input"
+          type="password"
+          placeholder="Password"
+          ref={passwordRef}
+        />
+        <button onClick={onHandleClick} className="btn">
+          Log In
+        </button>
+      </div>
+      <Link to="/register" className="link">
+        Sing in
+      </Link>
+    </div>
+  );
 };
 
 export default Login;

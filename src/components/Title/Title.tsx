@@ -1,11 +1,8 @@
-import React from 'react';
-import './Title.css'
-interface TitleProps {
-    text: string;
-}
+import React from "react";
+import "./Title.css";
 
-const Title: React.FC<TitleProps> = ({ text }) => {
-    return <h2 className='title'>{text}</h2>;
+const Title: React.FC<{ text: string }> = ({ text }) => {
+  return <h2 className="title">{text}</h2>;
 };
 
 export default Title;

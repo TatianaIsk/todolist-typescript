@@ -1,0 +1,12 @@
+.text {
+    color: var(--title-color);
+    margin: 20px 0 10px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.error-message {
+    margin-top: 7px;
+    font-size: 12px;
+    color: red;
+}
