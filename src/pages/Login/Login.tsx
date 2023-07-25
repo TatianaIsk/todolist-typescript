@@ -15,7 +15,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <form className="container">
       <Title text="Login" />
       <div className="inputLogin">
         <input
@@ -30,14 +30,14 @@ const Login = () => {
           placeholder="Password"
           ref={passwordRef}
         />
-        <button onClick={onHandleClick} className="btn">
+        <button onClick={onHandleClick} type="submit" className="btn">
           Log In
         </button>
       </div>
       <Link to="/register" className="link">
         Sing in
       </Link>
-    </div>
+    </form>
   );
 };
 
