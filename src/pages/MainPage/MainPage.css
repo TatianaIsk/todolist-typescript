@@ -6,6 +6,7 @@
     background: var(--primary-color);
     border-radius: 10px;
     padding: 40px 25px;
+    position: relative;
 }
 
 .header {
@@ -38,4 +39,8 @@
     font-size: 14px;
     font-weight: 600;
     color: #413F3F;
+}
+
+.modal-overlay {
+    position: absolute;
 }
