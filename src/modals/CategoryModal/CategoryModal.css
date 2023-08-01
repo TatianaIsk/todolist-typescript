@@ -1,4 +1,6 @@
 .modal {
     position: absolute;
     background-color: var(--primary-color);
+    max-width: 540px;
+    padding: 20px 16px;
 }

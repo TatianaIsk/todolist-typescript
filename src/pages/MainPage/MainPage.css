@@ -43,4 +43,5 @@
 
 .modal-overlay {
     position: absolute;
+    background-color: var(--primary-color);
 }

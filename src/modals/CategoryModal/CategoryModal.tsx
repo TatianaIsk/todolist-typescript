@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Title from "../../components/Title/Title";
+import "./CategoryModal.css";
 
 interface CategoryModalProps {
   isOpen: boolean;
@@ -29,7 +31,7 @@ const CategoryModal: React.FC<CategoryModalProps> = ({
   return (
     <div className="modal">
       <div className="modal-content">
-        <h2>Create Category</h2>
+        <Title text="New category" />
         <input
           type="text"
           placeholder="Category Name"
