@@ -7,7 +7,7 @@ const MainPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.preventDefault();
     setIsModalOpen(true);
@@ -23,22 +23,20 @@ const MainPage = () => {
   };
 
   return (
-    <div className="container-main">
+    <div className="containerMain">
       <div className="header">
         <Title text="Username" />
-        <button className="btn-delete">Delete list</button>
+        <button className="btnRed">Delete list</button>
       </div>
-      <button className="btn-category" onClick={handleOpenModal}>
+      <button className="btnCategory" onClick={handleOpenModal}>
         New category
       </button>
       {isModalOpen && (
-        <div className="modal-overlay">
-          <CategoryModal
-            isOpen={isModalOpen}
-            onClose={handleCloseModal}
-            onCreateCategory={handleCreateCategory}
-          />
-        </div>
+        <CategoryModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          onCreateCategory={handleCreateCategory}
+        />
       )}
     </div>
   );

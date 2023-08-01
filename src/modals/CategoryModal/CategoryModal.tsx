@@ -30,16 +30,23 @@ const CategoryModal: React.FC<CategoryModalProps> = ({
 
   return (
     <div className="modal">
-      <div className="modal-content">
-        <Title text="New category" />
+      <div className="modalContent">
+        <div className="modalHeader">
+          <Title text="New category" />
+          <button onClick={onClose} className="btnRed">
+            Close
+          </button>
+        </div>
         <input
           type="text"
-          placeholder="Category Name"
+          placeholder="New category name"
           value={categoryName}
           onChange={handleInputChange}
+          className="input"
         />
-        <button onClick={handleCreateCategory}>Create</button>
-        <button onClick={onClose}>Cancel</button>
+        <button onClick={handleCreateCategory} className="btnGreen">
+          Add
+        </button>
       </div>
     </div>
   );

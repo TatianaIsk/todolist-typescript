@@ -1,4 +1,4 @@
-.container-main {
+.containerMain {
     display: flex;
     flex-direction: column;
     max-width: 540px;
@@ -17,19 +17,19 @@
     border-bottom: 1px solid var(--secondary-color);
 }
 
-.btn-delete {
-    background-color: #EB5757;
+.btnRed {
+    background-color: var(--red-color);
     margin-left: 250px;
     max-width: 120px;
     border: none;
-    padding: 14px 20px;
+    padding: 8px 16px;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
     color: var(--primary-color);
 }
 
-.btn-category {
+.btnCategory {
     background-color: #F5F5F5;
     width: 490px;
     margin-top: 30px;
@@ -39,9 +39,4 @@
     font-size: 14px;
     font-weight: 600;
     color: #413F3F;
-}
-
-.modal-overlay {
-    position: absolute;
-    background-color: var(--primary-color);
 }
