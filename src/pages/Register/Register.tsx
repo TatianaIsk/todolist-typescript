@@ -43,7 +43,7 @@ const Register = () => {
         ref={emailRef}
       />
       {emailError && (
-        <p className="error-message">Invalid message{emailError}</p>
+        <p className="errorMessage">Invalid message{emailError}</p>
       )}
       <input
         className="input"
