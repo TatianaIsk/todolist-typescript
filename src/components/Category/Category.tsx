@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import callapseIcon from "./../../assets/callapse-icon.png";
 import addSubset from "./../../assets/add-subset.png";
 import writeItem from "./../../assets/write.png";
@@ -11,6 +11,9 @@ interface CategoryProps {
 }
 
 const Category: FC<CategoryProps> = ({ title, checkbox }) => {
+  const inputRef = useRef<HTMLInputElement[]>([]);
+  const checkboxId = `checkbox-${title.replace(/ /g, "-")}`;
+
   return (
     <div className="categoryItem">
       <div className="checkboxItem">
@@ -18,9 +21,12 @@ const Category: FC<CategoryProps> = ({ title, checkbox }) => {
           type="checkbox"
           className="checkbox"
           checked={checkbox}
-          id="categoryCheckbox"
+          id={checkboxId}
+          ref={(el) => {
+            if (el) inputRef.current.push(el);
+          }}
         />
-        <label className="categoryTitle" htmlFor="categoryCheckbox">
+        <label className="categoryTitle" htmlFor={checkboxId}>
           {title}
         </label>
       </div>
