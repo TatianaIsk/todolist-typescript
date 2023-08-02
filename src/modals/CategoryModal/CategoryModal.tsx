@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import Title from "../../components/Title/Title";
 import "./CategoryModal.css";
 
@@ -9,24 +9,14 @@ interface CategoryModalProps {
 }
 
 const CategoryModal: React.FC<CategoryModalProps> = ({
-  isOpen,
   onClose,
   onCreateCategory,
 }) => {
   const [categoryName, setCategoryName] = useState("");
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onHandleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setCategoryName(event.target.value);
   };
-
-  const handleCreateCategory = () => {
-    onCreateCategory(categoryName);
-    setCategoryName("");
-  };
-
-  if (!isOpen) {
-    return null;
-  }
 
   return (
     <div className="modal">
@@ -41,10 +31,13 @@ const CategoryModal: React.FC<CategoryModalProps> = ({
           type="text"
           placeholder="New category name"
           value={categoryName}
-          onChange={handleInputChange}
+          onChange={onHandleChange}
           className="input"
         />
-        <button onClick={handleCreateCategory} className="btnGreen">
+        <button
+          onClick={() => onCreateCategory(categoryName)}
+          className="btnGreen"
+        >
           Add
         </button>
       </div>
