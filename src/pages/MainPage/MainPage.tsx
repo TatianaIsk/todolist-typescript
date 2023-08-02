@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import Title from "./../../../src/components/Title/Title";
 import CategoryModal from "../../modals/CategoryModal/CategoryModal";
+import Category from "../../components/Category/Category";
 import "./MainPage.css";
 
 const MainPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [categories, setCategories] = useState<string[]>([]);
 
   const handleCreateCategory = (name: string) => {
     console.log(`Создана категория: ${name}`);
+    setCategories([...categories, name]);
     setIsModalOpen(false);
   };
 
@@ -27,6 +30,9 @@ const MainPage = () => {
           onCreateCategory={handleCreateCategory}
         />
       )}
+      {categories.map((category, index) => (
+        <Category key={index} title={category} />
+      ))}
     </div>
   );
 };

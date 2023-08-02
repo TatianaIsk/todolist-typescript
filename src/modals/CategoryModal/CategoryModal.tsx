@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState, FC } from "react";
 import Title from "../../components/Title/Title";
 import "./CategoryModal.css";
 
@@ -8,7 +8,7 @@ interface CategoryModalProps {
   onCreateCategory: (name: string) => void;
 }
 
-const CategoryModal: React.FC<CategoryModalProps> = ({
+const CategoryModal: FC<CategoryModalProps> = ({
   onClose,
   onCreateCategory,
 }) => {
