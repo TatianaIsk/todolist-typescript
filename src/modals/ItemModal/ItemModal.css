@@ -1,0 +1,15 @@
+.subtitleItem {
+  font-size: 14px;
+}
+
+.modalItem {
+  position: absolute;
+  top: 40px;
+  left: -10px;
+  background-color: var(--primary-color);
+  width: 500px;
+  padding: 35px 30px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 20px;
+  z-index: 1000;
+}

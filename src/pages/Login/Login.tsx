@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
-import Title from "./../../../src/components/Title/Title";
-import "./Login.css";
-import { Link } from "react-router-dom";
+import React, { useRef } from 'react';
+import Title from './../../../src/components/Title/Title';
+import './Login.css';
+import { Link } from 'react-router-dom';
+import Button from '../../components/Button/Button';
 
 const Login = () => {
   const loginRef = useRef<HTMLInputElement>(null);
@@ -15,26 +16,16 @@ const Login = () => {
   };
 
   return (
-    <form className="container">
-      <Title text="Login" />
-      <div className="inputLogin">
-        <input
-          className="input"
-          type="text"
-          placeholder="Username"
-          ref={loginRef}
-        />
-        <input
-          className="input"
-          type="password"
-          placeholder="Password"
-          ref={passwordRef}
-        />
-        <button onClick={onHandleClick} type="submit" className="btn">
+    <form className='container'>
+      <Title text='Login' />
+      <div className='inputLogin'>
+        <input className='input' type='text' placeholder='Username' ref={loginRef} />
+        <input className='input' type='password' placeholder='Password' ref={passwordRef} />
+        <Button onClick={onHandleClick} className='btn'>
           Log In
-        </button>
+        </Button>
       </div>
-      <Link to="/register" className="link">
+      <Link to='/register' className='link'>
         Sing in
       </Link>
     </form>

@@ -1,23 +1,12 @@
-import React from "react";
+import clsx from 'clsx';
+import React, { ComponentPropsWithoutRef, PropsWithChildren, FC } from 'react';
 
-interface ButtonProps {
-  onClick: () => void;
-  text: string;
-  disabled?: boolean;
-  className?: string;
-}
+export type ButtonProps = PropsWithChildren<ComponentPropsWithoutRef<'button'>>;
 
-const Button: React.FC<ButtonProps> = ({
-  onClick,
-  text,
-  disabled,
-  className,
-}) => {
-  return (
-    <button onClick={onClick} disabled={disabled} className={className}>
-      {text}
-    </button>
-  );
-};
+const Button: FC<ButtonProps> = ({ className, children, ...props }) => (
+  <button className={clsx(className, 'button')} {...props}>
+    {children}
+  </button>
+);
 
 export default Button;

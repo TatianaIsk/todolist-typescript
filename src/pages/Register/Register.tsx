@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react";
-import Title from "./../../../src/components/Title/Title";
-import { useNavigate } from "react-router-dom";
-import { isValidEmail } from "../../ValidationUtils";
-import "./Register.css";
+import React, { useRef, useState } from 'react';
+import Title from './../../../src/components/Title/Title';
+import { useNavigate } from 'react-router-dom';
+import { isValidEmail } from '../../ValidationUtils';
+import './Register.css';
+import Button from '../../components/Button/Button';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -23,43 +24,21 @@ const Register = () => {
       confirmPassword: confirmPasswordRef.current?.value,
     });
 
-    navigate("/main");
+    navigate('/main');
   };
 
   return (
-    <form className="container">
-      <Title text="Sign Up" />
-      <p className="text">Please enter your details to continue.</p>
-      <input
-        className="input"
-        type="text"
-        placeholder="Username"
-        ref={usernameRef}
-      />
-      <input
-        className={"input" + (emailError ? "error" : "")}
-        type="text"
-        placeholder="Email"
-        ref={emailRef}
-      />
-      {emailError && (
-        <p className="errorMessage">Invalid message{emailError}</p>
-      )}
-      <input
-        className="input"
-        type="password"
-        placeholder="Password"
-        ref={passwordRef}
-      />
-      <input
-        className="input"
-        type="password"
-        placeholder="Confirm password"
-        ref={confirmPasswordRef}
-      />
-      <button onClick={onHandleClick} type="submit" className="btn">
+    <form className='container'>
+      <Title text='Sign Up' />
+      <p className='text'>Please enter your details to continue.</p>
+      <input className='input' type='text' placeholder='Username' ref={usernameRef} />
+      <input className={'input' + (emailError ? 'error' : '')} type='text' placeholder='Email' ref={emailRef} />
+      {emailError && <p className='errorMessage'>Invalid message{emailError}</p>}
+      <input className='input' type='password' placeholder='Password' ref={passwordRef} />
+      <input className='input' type='password' placeholder='Confirm password' ref={confirmPasswordRef} />
+      <Button onClick={onHandleClick} className='btn'>
         Sign Up
-      </button>
+      </Button>
     </form>
   );
 };

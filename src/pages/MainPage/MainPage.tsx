@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import Title from "./../../../src/components/Title/Title";
-import CategoryModal from "../../modals/CategoryModal/CategoryModal";
-import Category from "../../components/Category/Category";
-import "./MainPage.css";
+import React, { useState } from 'react';
+import Title from './../../../src/components/Title/Title';
+import CategoryModal from '../../modals/CategoryModal/CategoryModal';
+import Category from '../../components/Category/Category';
+import Button from '../../components/Button/Button';
+import './MainPage.css';
 
 const MainPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,21 +16,15 @@ const MainPage = () => {
   };
 
   return (
-    <div className="containerMain">
-      <div className="header">
-        <Title text="Username" />
-        <button className="btnRed">Delete list</button>
+    <div className='containerMain'>
+      <div className='header'>
+        <Title text='Username' />
+        <Button className='btnRed'>Delete list</Button>
       </div>
-      <button className="btnCategory" onClick={() => setIsModalOpen(true)}>
+      <Button className='btnCategory' onClick={() => setIsModalOpen(true)}>
         New category
-      </button>
-      {isModalOpen && (
-        <CategoryModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          onCreateCategory={handleCreateCategory}
-        />
-      )}
+      </Button>
+      {isModalOpen && <CategoryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onCreateCategory={handleCreateCategory} />}
       {categories.map((category, index) => (
         <Category key={index} title={category} />
       ))}
